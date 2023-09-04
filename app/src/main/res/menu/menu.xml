@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/itemregister"
+        android:title="New Register"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/itemexit"
+        android:title="Exit"
+        android:icon="@drawable/baseline_error_24">
+    </item>
+
+    <item
+        android:id="@+id/mn"
+        android:title="New Register"
+        app:showAsAction="ifRoom">
+    </item>
+
+
+</menu>
