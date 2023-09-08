@@ -15,8 +15,8 @@
     </item>
 
     <item
-        android:id="@+id/mn"
-        android:title="New Register"
+        android:id="@+id/itemsetting"
+        android:title="setting"
         app:showAsAction="ifRoom">
     </item>
 

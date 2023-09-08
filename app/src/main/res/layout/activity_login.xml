@@ -46,7 +46,7 @@
         android:layout_marginTop="92dp"
         android:layout_marginEnd="41dp"
         android:layout_marginBottom="92dp"
-        android:drawableLeft="@drawable/baseline_error_24"
+        android:drawableLeft="@drawable/baseline_error_outline_24"
         android:ems="10"
         android:hint=" Password"
         android:textColor="#fff"
