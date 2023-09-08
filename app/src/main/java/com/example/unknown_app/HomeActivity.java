@@ -22,7 +22,6 @@ public class HomeActivity extends AppCompatActivity {
     String name,email,mobileno;
     BottomNavigationView bottomNavigationView;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +33,9 @@ public class HomeActivity extends AppCompatActivity {
         Intent logindata = getIntent();
 
         name = logindata.getStringExtra("Name");
-        mobileno = logindata.getStringExtra("email");
-        email = logindata.getStringExtra("mobileno");
-
+        email = logindata.getStringExtra("email");
+        mobileno = logindata.getStringExtra("mobileNo");
+        
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -50,9 +49,9 @@ public class HomeActivity extends AppCompatActivity {
                 args.putString("Name",name);
                 homeFragment.setArguments(args);
 
-                fragmentloder(homeFragment,false);
+                fragmentloder(homeFragment);
             } else if (id==R.id.quiz) {
-                fragmentloder(new QuizFragment(),false);
+                fragmentloder(new QuizFragment());
 
             } else {
 
@@ -64,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
                 args.putString("MobileNo", mobileno);
                 profileFragment.setArguments(args);
 
-                fragmentloder(profileFragment, false);
+                fragmentloder(profileFragment);
             }
 
                 return true;
@@ -79,15 +78,8 @@ public class HomeActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public void fragmentloder(Fragment fragment, boolean flag){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        if (flag){
-            fragmentTransaction.add(R.id.containeroffragment,fragment);
-            fragmentTransaction.commit();
-        }else{
-            fragmentTransaction.replace(R.id.containeroffragment,fragment);
-            fragmentTransaction.commit();
-        }
+    public void fragmentloder(Fragment fragment){
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.containeroffragment,fragment).commit();
     }
 }

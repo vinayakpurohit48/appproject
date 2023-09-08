@@ -1,5 +1,9 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Unknown_App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title1">Unlock Your Learning\nPotential</string>
+    <string name="description1">Don\'t spend hours searching for study materials. Access organized and precise notes to boost your exam success today</string>
+    <string name="titel2">Learn on Your Terms</string>
+    <string name="description2">Study and access educational content wherever, whenever you want. Click to learn at your own pace, on your own schedule</string>
 </resources>
