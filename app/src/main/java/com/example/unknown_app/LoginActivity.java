@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView newacc, forgotpassbtn;
     EditText eusername, epassword;
     Button loginbtn;
-    String username, password, mobileno, name;
+    String username, password, mobileno, name, changedpassword;
     int attemp = 0;
 
     @Override
@@ -44,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
         password = dataregister.getStringExtra("pass");
         name = dataregister.getStringExtra("Name");
         mobileno = dataregister.getStringExtra("mobileno");
+        changedpassword = dataregister.getStringExtra("changedpassword");
+
 
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (attemp < 3) {
 
-                    if (usernm.equals(username) && edpass.equals(password)) {
+                    if (usernm.equals(username) && edpass.equals(password) || edpass.equals(changedpassword)) {
                         Toast.makeText(LoginActivity.this, "Logined Success", Toast.LENGTH_SHORT).show();
                         Intent logintohome = new Intent(getApplicationContext(), HomeActivity.class);
                         logintohome.putExtra("Name", name);

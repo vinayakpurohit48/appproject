@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     EditText email,password,name, mobileno;
     Button registerbtn;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

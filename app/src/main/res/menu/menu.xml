@@ -4,20 +4,17 @@
 
     <item
         android:id="@+id/itemregister"
-        android:title="New Register"
-        app:showAsAction="ifRoom">
+        android:title="New Register"/>
+
+    <item
+        android:id="@+id/itemsetting"
+        android:title="setting">
     </item>
 
     <item
         android:id="@+id/itemexit"
         android:title="Exit"
         android:icon="@drawable/baseline_error_24">
-    </item>
-
-    <item
-        android:id="@+id/itemsetting"
-        android:title="setting"
-        app:showAsAction="ifRoom">
     </item>
 
 
