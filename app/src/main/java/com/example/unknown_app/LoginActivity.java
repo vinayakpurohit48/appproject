@@ -56,20 +56,24 @@ public class LoginActivity extends AppCompatActivity {
                 String edpass = epassword.getText().toString();
 
                 if (attemp < 3) {
-
-                    if (usernm.equals(username) && edpass.equals(password) || edpass.equals(changedpassword)) {
-                        Toast.makeText(LoginActivity.this, "Logined Success", Toast.LENGTH_SHORT).show();
-                        Intent logintohome = new Intent(getApplicationContext(), HomeActivity.class);
-                        logintohome.putExtra("Name", name);
-                        logintohome.putExtra("mobileno",mobileno);
-                        logintohome.putExtra("email", username);
-                        startActivity(logintohome);
-                        finish();
+                    if (usernm.equals("") || edpass.equals("")) {
+                        raiseerror(usernm, eusername);
+                        raiseerror(edpass, epassword);
                     } else {
-                        Toast.makeText(LoginActivity.this, "!! Something Went wrong !!" + "You have " + (3 - attemp) + "Attempt Left", Toast.LENGTH_SHORT).show();
-                        attemp = attemp + 1;
+                        if (usernm.equals(username) && edpass.equals(password) || edpass.equals(changedpassword)) {
+                            Toast.makeText(LoginActivity.this, "Logined Success", Toast.LENGTH_SHORT).show();
+                            Intent logintohome = new Intent(getApplicationContext(), HomeActivity.class);
+                            logintohome.putExtra("Name", name);
+                            logintohome.putExtra("mobileno", mobileno);
+                            logintohome.putExtra("email", username);
+                            startActivity(logintohome);
+                            finish();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "!! Something Went wrong !!" + "You have " + (3 - attemp) + "Attempt Left", Toast.LENGTH_SHORT).show();
+                            attemp = attemp + 1;
+                        }
                     }
-                } else {
+                }else{
                     Toast.makeText(LoginActivity.this, "Account Suspended", Toast.LENGTH_SHORT).show();
                     Intent logintoregister = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(logintoregister);
@@ -84,5 +88,9 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(logintoforgotpass);
             }
         });
+    }
+    public void raiseerror(String string, EditText editText){
+        if(string.isEmpty())
+            editText.setError("This Field can't be Empty");
     }
 }
