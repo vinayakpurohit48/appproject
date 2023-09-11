@@ -22,45 +22,31 @@
                 android:id="@+id/bbasem1"
                 android:layout_width="361dp"
                 android:layout_height="167dp"
-                app:srcCompat="@drawable/bba1"
+                app:srcCompat="@drawable/bbasem1"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal" />
             <ImageView
                 android:id="@+id/bcasem2"
                 android:layout_width="361dp"
                 android:layout_height="167dp"
-                app:srcCompat="@drawable/bba2"
-                android:layout_gravity="center_horizontal" />
-
-            <ImageView
-                android:id="@+id/bcasem3"
-                android:layout_width="361dp"
-                android:layout_height="167dp"
-                app:srcCompat="@drawable/bba3"
-                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/bbasem2"
                 android:layout_gravity="center_horizontal" />
 
             <ImageView
                 android:id="@+id/bcasem4"
                 android:layout_width="361dp"
                 android:layout_height="167dp"
-                app:srcCompat="@drawable/bba4"
+                app:srcCompat="@drawable/bbasem3"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal" />
 
-            <ImageView
-                android:id="@+id/bbasem5"
-                android:layout_width="361dp"
-                android:layout_height="167dp"
-                app:srcCompat="@drawable/bba5"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal" />
+
 
             <ImageView
                 android:id="@+id/bbasem6"
                 android:layout_width="361dp"
                 android:layout_height="167dp"
-                app:srcCompat="@drawable/bba6"
+                app:srcCompat="@drawable/bbasem4"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal" />
 

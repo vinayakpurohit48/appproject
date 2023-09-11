@@ -42,18 +42,9 @@
                 android:id="@+id/bcasem4"
                 android:layout_width="361dp"
                 android:layout_height="167dp"
-                app:srcCompat="@drawable/bcasem4"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal" />
-
-            <ImageView
-                android:id="@+id/bcasem5"
-                android:layout_width="361dp"
-                android:layout_height="167dp"
-                app:srcCompat="@drawable/bcasem5"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal" />
-
+                app:srcCompat="@drawable/bcasem4" />
 
 
         </LinearLayout>
