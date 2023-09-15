@@ -6,51 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".bca_Activity">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bcabanner"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
-        android:layout_width="match_parent"
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="82dp">
-        <LinearLayout
+        android:layout_marginBottom="189dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:columnCount="2"
+            android:rowCount="3">
+
             <ImageView
                 android:id="@+id/bcasem1"
-                android:layout_width="361dp"
-                android:layout_height="167dp"
-                app:srcCompat="@drawable/bcasem1"
-                android:layout_gravity="center_horizontal" />
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="13dp"
+                app:srcCompat="@drawable/bcasem1" />
 
             <ImageView
                 android:id="@+id/bcasem2"
-                android:layout_width="361dp"
-                android:layout_height="167dp"
-                app:srcCompat="@drawable/bcasem2"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bcasem2" />
 
             <ImageView
                 android:id="@+id/bcasem3"
-                android:layout_width="361dp"
-                android:layout_height="167dp"
-                app:srcCompat="@drawable/bcasem3"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="13dp"
+                app:srcCompat="@drawable/bcasem3" />
 
             <ImageView
                 android:id="@+id/bcasem4"
-                android:layout_width="361dp"
-                android:layout_height="167dp"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
                 app:srcCompat="@drawable/bcasem4" />
 
 
-        </LinearLayout>
+        </GridLayout>
 
     </ScrollView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

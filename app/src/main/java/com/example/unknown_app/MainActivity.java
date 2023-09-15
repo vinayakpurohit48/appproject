@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView rtologin;
+    TextView rtologin,skip;
     EditText email,password,name, mobileno;
     Button registerbtn;
 
@@ -29,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
         registerbtn = (Button) findViewById(R.id.registerbtn);
         name = (EditText) findViewById(R.id.name);
         mobileno = (EditText) findViewById(R.id.mobileno);
+        skip = (TextView) findViewById(R.id.skip);
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent skip = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(skip);
+            }
+        });
 
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override

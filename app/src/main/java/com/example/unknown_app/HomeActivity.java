@@ -1,6 +1,5 @@
 package com.example.unknown_app;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,14 +17,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     Toolbar toolbar;
-    String name,email,mobileno;
+    String name, email, mobileno;
     BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bnview);
+
+        bottomNavigationView = findViewById(R.id.bnview);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -34,41 +34,41 @@ public class HomeActivity extends AppCompatActivity {
         name = logindata.getStringExtra("Name");
         email = logindata.getStringExtra("email");
         mobileno = logindata.getStringExtra("mobileNo");
-        
+
+            HomeFragment homeFragment = new HomeFragment();
+            Bundle args = new Bundle();
+            args.putString("Name", name);
+            homeFragment.setArguments(args);
+
+            fragmentLoader(homeFragment);
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
 
-            int id = item.getItemId();
+                if (id == R.id.home) {
+                    HomeFragment homeFragment = new HomeFragment();
+                    Bundle args = new Bundle();
+                    args.putString("Name", name);
+                    homeFragment.setArguments(args);
 
-            if(id==R.id.home){
+                    fragmentLoader(homeFragment);
+                } else if (id == R.id.quiz) {
+                    fragmentLoader(new QuizFragment());
+                } else {
+                    ProfileFragment profileFragment = new ProfileFragment();
+                    Bundle args = new Bundle();
+                    args.putString("Name", name);
+                    args.putString("Email", email);
+                    args.putString("MobileNo", mobileno);
+                    profileFragment.setArguments(args);
 
-                HomeFragment homeFragment = new HomeFragment();
-                Bundle args = new Bundle();
-                args.putString("Name",name);
-                homeFragment.setArguments(args);
-
-                fragmentloder(homeFragment);
-            } else if (id==R.id.quiz) {
-                fragmentloder(new QuizFragment());
-
-            } else {
-
-                ProfileFragment profileFragment = new ProfileFragment();
-
-                Bundle args = new Bundle();
-                args.putString("Name", name);
-                args.putString("Email", email);
-                args.putString("MobileNo", mobileno);
-                profileFragment.setArguments(args);
-
-                fragmentloder(profileFragment);
-            }
-
+                    fragmentLoader(profileFragment);
+                }
                 return true;
             }
         });
-
     }
 
     @Override
@@ -80,19 +80,19 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.itemregister){
-            Intent itemtoregister = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(itemtoregister);
+        if (id == R.id.itemregister) {
+            Intent itemToRegister = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(itemToRegister);
         } else if (id == R.id.itemsetting) {
-            Toast.makeText(this, "!! Setting not available for the page !!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Setting is not available for this page", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.itemexit) {
             finish();
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void fragmentloder(Fragment fragment){
+    public void fragmentLoader(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.containeroffragment,fragment).commit();
+        fragmentTransaction.replace(R.id.containeroffragment, fragment).commit();
     }
 }
